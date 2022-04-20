@@ -1,0 +1,27 @@
+﻿body
+{
+	font-weight: normal;
+	font-size: 8pt; 
+	font-style: normal;
+	font-family: Verdana;
+	width: 800px;
+	height: 100%;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+.Button
+{  
+	border-style: ridge;
+	border-width: 2px;
+	border-bottom-color: #D6D3CE; 
+	border-right-color: #D6D3CE; 
+	border-top-color: #F7F7F7;
+	border-left-color: #F7F7F7;
+	font-size: 8pt;  
+	color: #e7eef4;
+	background-color: #4f729a;
+    padding: 3px;
+}

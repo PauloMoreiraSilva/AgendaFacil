@@ -1,0 +1,14 @@
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Cache\bin\Release\PI4Sem.Cache.dll.config
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Cache\bin\Release\PI4Sem.Cache.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Cache\bin\Release\PI4Sem.Cache.pdb
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Cache\bin\Release\FluentAssertions.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Cache\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Cache\bin\Release\System.ValueTuple.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Cache\bin\Release\FluentAssertions.pdb
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Cache\bin\Release\FluentAssertions.xml
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Cache\bin\Release\System.ValueTuple.xml
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Cache\obj\Release\Cache.csproj.AssemblyReference.cache
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Cache\obj\Release\Cache.csproj.CoreCompileInputs.cache
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Cache\obj\Release\Cache.csproj.CopyComplete
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Cache\obj\Release\PI4Sem.Cache.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Cache\obj\Release\PI4Sem.Cache.pdb

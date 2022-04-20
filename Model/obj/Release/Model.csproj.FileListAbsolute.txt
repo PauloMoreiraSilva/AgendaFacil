@@ -1,0 +1,6 @@
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Model\bin\Release\PI4Sem.Model.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Model\bin\Release\PI4Sem.Model.pdb
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Model\obj\Release\Model.csproj.AssemblyReference.cache
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Model\obj\Release\Model.csproj.CoreCompileInputs.cache
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Model\obj\Release\PI4Sem.Model.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Model\obj\Release\PI4Sem.Model.pdb

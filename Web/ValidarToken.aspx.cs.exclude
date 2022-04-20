@@ -1,0 +1,245 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+//using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+//using System.Xml.Linq;
+using System.Collections.Generic;
+using PI4Sem.DataBase;
+using PI4Sem.Infra;
+using PI4Sem.DAL;
+using System.Security.Cryptography;
+using System.IO;
+using System.Text;
+using PI4Sem.Config;
+
+public partial class ValidarToken : System.Web.UI.Page
+{
+    public string ImagePath = "";
+    AdmUsuario oAdmUsuario = null;
+    Config oConfig = null;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Page.Title = AppProgram.AppName;
+
+        #region Recupera diretório de imagens
+
+        ImagePath = AppProgram.GetAppImagesPath();
+
+        #endregion
+
+        if (Session["UserLoggedInfo"] != null)
+        {
+            Response.Redirect("~/");
+        }
+
+        oConfig = new Config();
+
+        if (!Page.IsPostBack)
+        {
+            lblAmbiente.Text = oConfig.Key.Ambiente;
+            lblVersao.Text = AdmGlobal.Versao;
+
+            txtToken.Focus();
+
+            ValidarUrl();
+        }
+
+        //#region Aplica as chaves ao ReCaptcha
+
+        //    ctrlGoogleReCaptcha.PublicKey = ConfigurationManager.AppSettings["PkPublicaReCaptcha"];
+        //    ctrlGoogleReCaptcha.PrivateKey = ConfigurationManager.AppSettings["PkPrivadaReCaptcha"];
+
+        //#endregion
+    }
+
+    private void ProcessarRequisicao()
+    {
+        string sResultado = "";
+        trSenha.Visible = false;
+        lblSenha.Text = "";
+
+        oAdmUsuario = new AdmUsuario();
+
+        string sUsuario = txtUsuario.Text;
+        string sToken = txtToken.Text;
+
+        if (oConfig.Key.PortalAdministrativo == "0")
+        {
+            if ((sUsuario.Length > 3 && sUsuario.Substring(0, 3) != "BAN") || sUsuario.Length < 4)
+            {
+                sResultado = oAdmUsuario.ValidarToken(sToken, sUsuario);
+            }
+            else
+            {
+                sResultado = "1";
+            }
+        }
+        else
+        {
+            if ((sUsuario.Length > 3 && sUsuario.Substring(0, 3) != "BAN") || sUsuario.Length < 4)
+            {
+                sResultado = "1";
+            }
+            else
+            {
+                sResultado = oAdmUsuario.ValidarToken(sToken, sUsuario);
+            }
+        }
+
+        if (sResultado == "1")
+        {
+            AppProgram.SetAlertAjax(this, "Usuário não encontrado.", "SetAlert");
+        }
+        else if (sResultado == "2")
+        {
+            AppProgram.SetAlertAjax(this, "Token inválido.", "SetAlert");
+        }
+        else if (sResultado == "3")
+        {
+            AppProgram.SetAlertAjax(this, "Token expirado.", "SetAlert");
+        }
+        else
+        {
+            trSenha.Visible = true;
+            lblSenha.Text = sResultado;
+        }
+    }
+
+    protected void btnSalvar_Click(object sender, EventArgs e)
+    {
+        if (NoBot.IsValid())
+        {
+            ProcessarRequisicao();
+        }
+        else
+        {
+            AppProgram.SetAlertAjax(this, "O sistema não conseguiu detectar que você é um humano. Por favor tente novamente.", "SetAlert");
+        }
+    }
+
+    protected void btnCancelar_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/MainLogin.aspx");
+    }
+
+    private void ValidarUrl()
+    {
+        oAdmUsuario = new AdmUsuario();
+
+        string sResultado = "";
+        string sQuery = Request.QueryString["enc"];
+
+        if (sQuery != null)
+        {
+            if (NoBot.IsValid())
+            {
+                string param = Formats.Descriptografar(sQuery);
+
+                string[] sDados = param.Split(';');
+
+                if (sDados.Length == 2)
+                {
+                    sResultado = oAdmUsuario.ValidarToken(sDados[1], sDados[0]);
+
+                    txtUsuario.Text = sDados[0];
+                    txtToken.Text = sDados[1];
+
+                    if (sResultado == "1")
+                    {
+                        AppProgram.SetAlertAjax(this, "Usuário não encontrado.", "SetAlert");
+                    }
+                    else if (sResultado == "2")
+                    {
+                        AppProgram.SetAlertAjax(this, "Token inválido.", "SetAlert");
+                    }
+                    else if (sResultado == "3")
+                    {
+                        AppProgram.SetAlertAjax(this, "Token expirado.", "SetAlert");
+                    }
+                    else
+                    {
+                        FormsAuthentication.RedirectToLoginPage("enc=" + sQuery);
+                        //Autenticar(sDados[0]);
+                    }
+                }
+            }
+            else
+            {
+                AppProgram.SetAlertAjax(this, "O sistema não conseguiu detectar que você é um humano. Por favor tente novamente.", "SetAlert");
+            }
+        }
+    }
+
+    protected void Unnamed_Click(object sender, EventArgs e)
+    {
+        string query = Formats.Criptografar("BAN0014;D1JQuUBfNts8MCE2jqHb");
+        //string query = "?user=BAN0002&token=yD3M3DWNU0w51yyG3OxN";
+
+        ////string param = HttpUtility.UrlEncode(query);
+        Response.Redirect(string.Format("~/ValidarToken.aspx?enc={0}", query));
+    }
+
+    private void Autenticar(string sUsuario)
+    {
+        List<IDbDataParameter> lstParameters = new List<IDbDataParameter>();
+
+        lstParameters.Add(DBHelper.GetParameter("LoginAcesso", sUsuario));
+
+        IDbConnection oConn = DBHelper.GetConnection();
+
+        IDataReader oDR = DBHelper.GetDataReader(oConn, "GetUserLoggedInfo", CommandType.StoredProcedure, CommandBehavior.CloseConnection, lstParameters);
+
+        UserLoggedInfo oUserLoggedInfo = new UserLoggedInfo();
+
+        if (oDR.Read())
+        {
+            if (oDR["CodigoCedente"] != DBNull.Value)
+            {
+                oUserLoggedInfo.CodigoCedente = int.Parse(oDR["CodigoCedente"].ToString());
+            }
+
+            oUserLoggedInfo.Codigo = int.Parse(oDR["CodigoUsuario"].ToString());
+            oUserLoggedInfo.NomeCedente = oDR["NomeCedente"].ToString();
+            oUserLoggedInfo.NomeUsuario = oDR["NomeUsuario"].ToString();
+            oUserLoggedInfo.CodigoModulo = int.Parse(oDR["CodigoModulo"].ToString());
+            oUserLoggedInfo.CodigoPerfil = int.Parse(oDR["CodigoPerfil"].ToString());
+            oUserLoggedInfo.DescModulo = oDR["DescModulo"].ToString();
+            oUserLoggedInfo.DescPerfil = oDR["DescPerfil"].ToString();
+            oUserLoggedInfo.LoginAcesso = oDR["LoginAcesso"].ToString();
+            oUserLoggedInfo.TrocaSenha = int.Parse(oDR["TrocaSenha"].ToString());
+
+            if (oDR["CodigoSacado"] != DBNull.Value)
+            {
+                oUserLoggedInfo.CodigoSacado = Convert.ToInt32(oDR["CodigoSacado"]);
+            }
+
+            if (oDR["CodigoNucleo"] != DBNull.Value)
+            {
+                oUserLoggedInfo.CodigoNucleo = int.Parse(oDR["CodigoNucleo"].ToString());
+            }
+
+            oUserLoggedInfo.NomeSacado = oDR["NomeSacado"].ToString();
+            oUserLoggedInfo.NumInscricaoComprador = oDR["NumInscricaoComprador"].ToString();
+
+            if (oDR["QtdLoginFalha"] != DBNull.Value)
+            {
+                oUserLoggedInfo.QtdLoginFalha = Convert.ToInt32(oDR["QtdLoginFalha"]);
+            }
+        }
+
+        oDR.Close();
+        oDR.Dispose();
+
+        Session["UserLoggedInfo"] = oUserLoggedInfo;
+
+        FormsAuthentication.RedirectFromLoginPage(oUserLoggedInfo.Codigo.ToString(), false);
+    }
+}

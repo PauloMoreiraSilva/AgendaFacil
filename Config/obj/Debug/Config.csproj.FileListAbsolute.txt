@@ -1,0 +1,48 @@
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\bin\Debug\Guasti.Config.dll.config
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\bin\Debug\Guasti.Config.dll
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\bin\Debug\Guasti.Config.pdb
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\bin\Debug\FluentAssertions.dll
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\bin\Debug\Guasti.Cache.dll
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\bin\Debug\Guasti.Cache.pdb
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\bin\Debug\Guasti.Cache.dll.config
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\bin\Debug\FluentAssertions.pdb
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\bin\Debug\FluentAssertions.xml
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\obj\Debug\Config.csproj.AssemblyReference.cache
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\obj\Debug\Config.csproj.CoreCompileInputs.cache
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\obj\Debug\Config.csproj.CopyComplete
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\obj\Debug\Guasti.Config.dll
+D:\Guasti\Clientes\Bank of America\Emissor de Boletos Canon\Emissor de Boletos Canon\Config\obj\Debug\Guasti.Config.pdb
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\bin\Debug\PI4Sem.Config.dll.config
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\bin\Debug\PI4Sem.Config.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\bin\Debug\PI4Sem.Config.pdb
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\bin\Debug\PI4Sem.Cache.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\bin\Debug\PI4Sem.Cache.pdb
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\bin\Debug\PI4Sem.Cache.dll.config
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\obj\Debug\Config.csproj.AssemblyReference.cache
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\obj\Debug\Config.csproj.CoreCompileInputs.cache
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\obj\Debug\Config.csproj.CopyComplete
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\obj\Debug\PI4Sem.Config.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\obj\Debug\PI4Sem.Config.pdb
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\bin\Debug\FluentAssertions.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\bin\Debug\FluentAssertions.pdb
+D:\UNIVESP\6o Bimestre\PI\Projeto\AgendaFacil\Config\bin\Debug\FluentAssertions.xml
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\bin\Debug\PI4Sem.Config.dll.config
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\bin\Debug\PI4Sem.Config.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\bin\Debug\PI4Sem.Config.pdb
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\bin\Debug\FluentAssertions.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\bin\Debug\PI4Sem.Cache.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\bin\Debug\PI4Sem.Cache.pdb
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\bin\Debug\PI4Sem.Cache.dll.config
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\bin\Debug\FluentAssertions.pdb
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\bin\Debug\FluentAssertions.xml
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\obj\Debug\Config.csproj.AssemblyReference.cache
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\obj\Debug\Config.csproj.CoreCompileInputs.cache
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\obj\Debug\Config.csproj.CopyComplete
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\obj\Debug\PI4Sem.Config.dll
+D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Config\obj\Debug\PI4Sem.Config.pdb

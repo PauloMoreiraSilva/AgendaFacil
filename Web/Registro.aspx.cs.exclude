@@ -1,0 +1,105 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Web.UI;
+using PI4Sem.Config;
+using PI4Sem.DAL;
+using PI4Sem.Infra;
+using PI4Sem.Model;
+
+public partial class Registro : System.Web.UI.Page
+{
+    public string ImagePath = "";
+    private Config oConfig = null;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Page.Title = AppProgram.AppName;
+        ImagePath = AppProgram.GetAppImagesPath();
+        oConfig = new Config();
+
+        if (Session["UserLoggedInfo"] != null)
+        {
+            Response.Redirect("~/");
+        }
+
+        if (!Page.IsPostBack)
+        {
+            lblAmbiente.Text = oConfig.Key.Ambiente;
+            lblVersao.Text = AdmGlobal.Versao;
+
+            txtCNPJ.Focus();
+        }
+
+        #region Aplica as chaves ao ReCaptcha
+
+        ctrlGoogleReCaptcha.PublicKey = oConfig.Key.PkPublicaReCaptcha;
+        ctrlGoogleReCaptcha.PrivateKey = oConfig.Key.PkPrivadaReCaptcha;
+
+        #endregion Aplica as chaves ao ReCaptcha
+    }
+
+    private void ProcessarRequisicao()
+    {
+        string sCNPJ = txtCNPJ.Text;
+        string sEmail = txtEmail.Text.ToUpper();
+        string sCPF = txtCPF.Text;
+
+        if (string.IsNullOrEmpty(sCNPJ) || string.IsNullOrEmpty(sEmail))
+        {
+            AppProgram.SetAlert(this, "Por favor, verifique se o CNPJ e e-mail foram digitados corretamente.");
+            return;
+        }
+
+        if (!ctrlGoogleReCaptcha.Validate())
+        {
+            AppProgram.SetAlert(this, "Autenticação pelo ReCaptcha falhou. Tente novamente.");
+            return;
+        }
+
+        AdmAcessoCliente oAdmAcessoCliente = new AdmAcessoCliente();
+        List<AcessoCliente> lstAcessoCliente = oAdmAcessoCliente.SelectRows(NumInscricao: sCNPJ, Email: sEmail);
+
+        if (lstAcessoCliente.Count == 0)
+        {
+            AppProgram.SetAlert(this, "Por favor, verifique se o CNPJ e e-mail foram digitados corretamente.");
+            return;
+        }
+
+        AdmUsuario oAdmUsuario = new AdmUsuario();
+        int iResult = 0;
+        foreach (AcessoCliente oAcessoCliente in lstAcessoCliente)
+        {
+            oAcessoCliente.CPF = sCPF;
+            iResult = oAdmUsuario.RegistraAcessoCliente(oAcessoCliente: oAcessoCliente);
+            break;
+        }
+
+        if (iResult == 0)
+        {
+            AppProgram.SetAlert(this, "Ocorreu um erro em seu registro. Por favor, tente novamente.");
+        }
+        else if (iResult == 1)
+        {
+            AppProgram.SetAlert(this, "Registro realizado com sucesso. Seus dados de acesso foram enviados para o e-mail.");
+            Response.Redirect("~/MainLogin.aspx");
+        }
+        else if (iResult == 2)
+        {
+            AppProgram.SetAlert(this, "Este e-mail já está em uso para este cliente.");
+        }
+        else if (iResult == 3)
+        {
+            AppProgram.SetAlert(this, "Este CPF já está associado a outro acesso.");
+        }
+    }
+
+    protected void btnSalvar_Click(object sender, EventArgs e)
+    {
+        ProcessarRequisicao();
+    }
+
+    protected void btnCancelar_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/MainLogin.aspx");
+    }
+}

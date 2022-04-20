@@ -1,0 +1,412 @@
+﻿html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+body
+{
+	font-weight: normal;
+	font-size: 8pt;
+	font-style: normal;
+	font-family: Tahoma, Verdana;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	BACKGROUND-IMAGE: url("../Images/Back-base.png");
+}
+table
+{
+	border-collapse: separate;
+}
+
+.Menu
+{
+	font-weight: normal;
+	font-size: 8pt;
+	font-style: normal;
+	font-family: Verdana;
+	color: #002258;
+}
+
+.StaticMenuItem
+{
+}
+
+a:link.StaticMenuItem, A:visited.StaticMenuItem
+{
+	color: #002258;
+}
+
+.FormViewHeader
+{
+	text-align: center;
+}
+
+.FormViewLabel
+{
+	background-color: #E7E7FF;
+	color: #000000;
+	text-align: right;
+}
+
+.FormViewValue
+{
+	background-color: #ffffff;
+	color: #002258;
+	text-align: left;
+}
+
+.FormViewValue2
+{
+	background-color: #F7F7F7;
+	color: #002258;
+	text-align: left;
+}
+
+.FormViewSubTitle
+{
+	background-color: #ababab;
+	color: #ffffff;
+	text-align: center;
+}
+
+.ButtonTD
+{
+	background-color: #E7E7FF;
+	text-align: center;
+}
+
+.Button
+{
+	border-style: ridge;
+	border-width: 2px;
+	border-bottom-color: #D6D3CE;
+	border-right-color: #D6D3CE;
+	border-top-color: #F7F7F7;
+	border-left-color: #F7F7F7;
+	font-size: 8pt;
+	color: #e7eef4;
+	background-color: #fe0000;
+	padding: 3px;
+}
+
+.TextBox
+{
+	border-style: solid;
+	border-width: 1px;
+	border-color: Black;
+	text-align: left;
+	font-weight: normal;
+	font-size: 8pt;
+	font-style: normal;
+	font-family: Verdana;
+	color: #002258;
+	background-color: #FFFFFF;
+}
+
+.LoginLabel
+{
+	color: #5890C1;
+	text-align: right;
+}
+
+.ComboBoxCabecalho
+{
+	margin-right: 25%;
+}
+
+.TextoCabecalho1
+{
+	color: #0c2577;
+	text-align: left;
+}
+
+.TextoCabecalho2
+{
+	color: #ffffff;
+	text-align: left;
+}
+
+.TextoCabecalho3
+{
+	color: #666666;
+	text-align: left;
+	padding-left: 5px;
+	font-size: 10px;
+}
+
+.TextoCabecalho4
+{
+	background-color: #5890C1;
+	color: #FFFFFF;
+	text-align: left;
+	padding-left: 5px;
+	font-size: 12px;
+}
+
+.TextoValue1
+{
+	background-color: #ebf4f9;
+	color: #002258;
+	text-align: left;
+	font-size: 12px;
+}
+
+.GridGeneric
+{
+	color: #666666;
+}
+.GridHeader
+{
+	color: #0c2577;
+}
+.GridHeader a:link, a:visited, a:active, a:hover
+{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.GridPager a:link, a:visited, a:active, a:hover
+{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.GridPager span
+{
+	color: White;
+	background-color:#666666;
+	font-size:14px;
+}
+.GridPager td
+{
+	padding-left: 2px;
+	padding-right: 2px;
+}
+a:link.linksimples, A:visited.linksimples
+{
+	text-decoration: none;
+	color: #000000;
+}
+a:hover.linksimples
+{
+	text-decoration: underline;
+	color: #0c2577;
+}
+a:active.linksimples
+{
+	text-decoration: none;
+}
+.ValidSummary
+{
+	padding-left: 5px;
+	padding-top: 5px;
+}
+
+.ModalPopupBG
+{
+	background-color: gray;
+	filter: alpha(opacity=50);
+	opacity: 0.7;
+}
+
+.ModalPopup
+{
+	background:white;
+	padding: 5px 0px 8px 0px;
+}
+
+.HeaderModalPopup
+{
+	background-color: #fe0000;
+	filter: alpha(opacity=80);
+	min-height:18px;
+	vertical-align: central;
+	font-weight: bold;
+	font-size: 11px;
+	color: white;
+	padding-top:4px;
+}
+
+.ValidatorExtender
+{
+	background-color: white;
+}
+
+.HeaderRowBoleto
+{
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.HeaderCellBoletoRight
+{
+	padding: 0px 5px 5px 0px;
+	text-align: right;
+	width: 65px;
+	max-height: 60px;
+}
+
+.HeaderCellBoletoLeft
+{
+	padding: 0px 5px 5px 0px;
+	text-align: left;
+	width: 65px;
+	max-height: 60px;
+}
+
+.HeaderCellBoletoCenter
+{
+	padding: 0px 5px 5px 0px;
+	text-align: center;
+	width: 65px;
+	max-height: 60px;
+}
+
+.DetalheRowBoleto
+{
+	font-size: 9px;
+	/*font-weight: bold;*/
+}
+
+.DetalheRowMensagem
+{
+	font-size: 8px;
+	font-weight: bold;
+}
+
+.DetalheCellBoletoRight
+{
+	text-align: right;
+}
+
+.DetalheCellBoletoLeft
+{
+	text-align: left;
+}
+
+.DetalheCellBoletoCenter
+{
+	text-align: center;
+}
+
+.modalLoading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: black;
+	z-index: 99;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	min-height: 100%;
+	width: 100%;
+}
+
+.loading {
+	font-family: Arial;
+	font-size: 10pt;
+	border: 5px solid #67CFF5;
+	width: 200px;
+	height: 100px;
+	display: none;
+	position: fixed;
+	background-color: White;
+	z-index: 999;
+}
+
+#overlay {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0px;
+	background-color: #FFFFFF;
+	width: 100%;
+	height: 100%;
+	filter: Alpha(Opacity=80);
+	opacity: 0.80;
+	-noz-opacity: 0.80;
+}
+
+#theprogress {
+	background-color: #D3BB9C;
+	width: 110px;
+	height: 24px;
+	text-align: center;
+	filter: Alpha(Opacity=100);
+	opacity: 1;
+	-noz-opacity: 1;
+}
+
+#modalprogress {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -11px 0 0 -55px;
+	color: white;
+}
+
+body > #modalprogress {
+	position: fixed;
+}
+
+.dvContent {
+	min-height: 100%;
+}
+
+* html .dvContent {
+	height: 100%; /* hack para IE6 que trata height como min-height */
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.fa, .far, .fas, .fab {
+	color:black !important;
+}
+
+.fa:hover, .far:hover, .fas:hover, .fab:hover {
+	color: orangered !important;
+}
+
+.GridFunction {
+	font-size: 18px;
+}
+
+/* AutoComplete highlighted item */
+.AutoCompleteCompletionList {
+	margin: 0px !important;
+	padding: 0px 2px !important;
+	z-index: 99999 !important;
+	background-color: ivory;
+	color: windowtext;
+	border: buttonshadow;
+	border-width: 1px;
+	border-style: solid;
+	cursor: default;
+	overflow: auto;
+	height: 250px;
+	width: 400px;
+	text-align: left;
+	left: 0px;
+	list-style-type: none;
+}
+/* AutoComplete highlighted item */
+.AutoCompleteItemHighlighted {
+	z-index: 99999 !important;
+	background-color: #ffff99;
+	color: black;
+	padding: 2px;
+	cursor: pointer;
+}
+/* AutoComplete item */
+.AutoCompleteListItem {
+	z-index: 99999 !important;
+	background-color: window;
+	color: windowtext;
+	padding: 2px;
+	cursor: pointer;
+}

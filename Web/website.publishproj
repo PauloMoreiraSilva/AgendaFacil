@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+***********************************************************************************************
+website.publishproj
+
+AVISO: NÃO MODIFIQUE este arquivo, ele é usado para o processo de publicação na Web.
+
+Copyright (C) Microsoft Corporation. Todos os direitos reservados.
+
+***********************************************************************************************
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{bae449a7-d10e-4ccd-93e3-4ca5f2b600b7}</ProjectGuid>
+    <SourceWebPhysicalPath>$(MSBuildThisFileDirectory)</SourceWebPhysicalPath>
+    <SourceWebVirtualPath>/Web</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <SourceWebProject>
+    </SourceWebProject>
+    <SourceWebMetabasePath>
+    </SourceWebMetabasePath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- for VS2010 we need to use 10.5 but for VS2012+ we should use VisualStudioVersion -->
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)' =='' and '$(VisualStudioVersion)' == 10.0 ">10.5</WebPublishTargetsVersion>
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)'=='' ">$(VisualStudioVersion)</WebPublishTargetsVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(WebPublishTargetsVersion)</VSToolsPath>
+    <_WebPublishTargetsPath Condition=" '$(_WebPublishTargetsPath)'=='' ">$(VSToolsPath)</_WebPublishTargetsPath>
+    <AssemblyFileVersion Condition="'$(AssemblyFileVersion)' == ''">1.0.0.0</AssemblyFileVersion>
+    <AssemblyVersion Condition="'$(AssemblyVersion)' == ''">1.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Boleto.Net\Boleto.Net.csproj">
+      <Project>{F173E80B-E36B-48AD-B483-A27F8CA86F3C}</Project>
+      <Name>Boleto.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CNABSantander240\CNABSantander240.csproj">
+      <Project>{00E09F5A-384C-4E98-B5AD-A97FAADF7026}</Project>
+      <Name>CNABSantander240</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CNABSantander400\CNABSantander400.csproj">
+      <Project>{E1698BB6-93D7-47AF-989D-6C5F82F6EC60}</Project>
+      <Name>CNABSantander400</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Config\Config.csproj">
+      <Project>{C86ACFDA-ECE6-4AE6-B070-986F7088FBE4}</Project>
+      <Name>Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controls\Controls.csproj">
+      <Project>{9B3C5E34-D91C-405D-9CD8-A7982C5001BE}</Project>
+      <Name>Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{D3A7D8FA-F6BF-45A1-AF04-83B90FC8B182}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataBase\DataBase.csproj">
+      <Project>{FF69C447-3AF3-42D7-A58A-E16AE283843D}</Project>
+      <Name>DataBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FileCustom\CustomFile.csproj">
+      <Project>{78B2FC85-ACBC-47BC-8902-568FA0573F07}</Project>
+      <Name>CustomFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FileHelpersConverters\FileHelpersConverters.csproj">
+      <Project>{65EF4D5E-F8AA-4F83-B443-7B670ACCB86B}</Project>
+      <Name>FileHelpersConverters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infra\Infra.csproj">
+      <Project>{328083E6-DE0A-4B35-99E7-5F0BA08A208C}</Project>
+      <Name>Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{5A0C0B27-1EC7-4F6C-96F6-C6F44565AE7C}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(_WebPublishTargetsPath)\Web\Microsoft.WebSite.Publishing.targets" />
+</Project>

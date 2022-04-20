@@ -1,0 +1,43 @@
+﻿<table id="tbInfo" border="0" style="width:667px;">
+    <tr>
+        <td style="text-align:center;padding:10px;">@@TITULO</td>
+    </tr>
+    <tr>
+        <td style="border:4px solid black;padding:5px;">Beneficiário: @@NOMEBEN - CNPJ: @@CNPJBEN <br />
+                                                        Pagador: @@NOMEPAG - CNPJ/CPF: @@CNPJPAG </td>
+    </tr>
+    <tr>
+        <td style="padding-top:5px;"></td>
+    </tr>
+</table>
+<table id="tbBoletos" cellpadding="20" border="0" style="width:667px;">
+    <tr class="HeaderRowBoleto">
+        <th class="HeaderCellBoletoLeft">Nosso Número</th>
+        <th class="HeaderCellBoletoLeft" style="width:50px;">BL</th>
+        <th class="HeaderCellBoletoCenter" style="width:45px;">Vencto.</th>
+        <th class="HeaderCellBoletoRight">Valor (BRL)</th>
+        <th class="HeaderCellBoletoRight">Valor (USD)</th>
+        <th class="HeaderCellBoletoRight">Taxa</th>
+        <th class="HeaderCellBoletoRight">Convertido</th>
+        <th class="HeaderCellBoletoRight">Abatimento</th>
+        <th class="HeaderCellBoletoRight">Valor a Pagar</th>
+    </tr>
+    @@LISTAGEM
+    <tr>
+        <td style="padding-top:5px;"></td>
+    </tr>
+    <tr>
+        <td colspan="11" style="border:2px solid black;"></td>
+    </tr>
+    <tr class="DetalheRowBoleto">
+        <td colspan="2"></td>
+        <td class="DetalheCellBoletoRight">Totais:</td>
+        <td class="DetalheCellBoletoRight">@@TOTALBRL</td>
+        <td class="DetalheCellBoletoRight">@@TOTALUSD</td>
+        <td class="DetalheCellBoletoRight">@@TAXA</td>
+        <td class="DetalheCellBoletoRight">@@TOTALCONVERTIDO</td>
+        <td class="DetalheCellBoletoRight">@@TOTALABATIMENTO</td>
+        <td class="DetalheCellBoletoRight">@@TOTALEMISSAO</td>
+    </tr>
+</table>
+<br />

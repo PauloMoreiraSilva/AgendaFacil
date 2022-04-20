@@ -1,0 +1,24 @@
+﻿body
+{
+    font-weight: normal;
+    font-size: 8pt; 
+    font-style: normal;
+    font-family: Verdana;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+.Button
+{  
+    display: none;
+}
+#tbCabecalho 
+{
+    display: none;
+}
+.quebrapagina {
+    page-break-after: always;
+}

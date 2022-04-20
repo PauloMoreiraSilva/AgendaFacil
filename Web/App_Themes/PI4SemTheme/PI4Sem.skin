@@ -1,0 +1,59 @@
+﻿<%@ Register Assembly="PI4Sem.Controls" Namespace="PI4Sem.Controls" TagPrefix="PI4Sem" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<PI4Sem:GridView runat="server"
+    AutoGenerateColumns="False" EmptyDataText="Nenhum registro localizado"
+    AllowSorting="True" AllowPaging="True" PageSize="40" BackColor="White" 
+    BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="2" CellSpacing="2"
+    GridLines="None" Width="100%" CssClass="GridGeneric">
+    <RowStyle BackColor="#E7E7FF" />
+    <FooterStyle BackColor="#c3c3c3" />
+    <PagerStyle BackColor="#c3c3c3" HorizontalAlign="Right" CssClass="GridPager" />
+    <SelectedRowStyle BackColor="#9AB6CC" ForeColor="#FFFFFF" />
+    <HeaderStyle BackColor="#c3c3c3" HorizontalAlign="Left" CssClass="GridHeader" ForeColor="#ffffff" />
+    <AlternatingRowStyle BackColor="#F7F7F7" />
+</PI4Sem:GridView>
+
+<asp:FormView runat="server" Width="90%" skinID="FormViewADD"
+    HeaderText="Inserindo registro" DefaultMode="Insert">
+    <HeaderStyle Font-Bold="True" CssClass="FormViewHeader" />
+    <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+</asp:FormView>
+
+<asp:FormView runat="server" Width="90%" skinID="FormViewUPD"
+    HeaderText="Editando registro" DefaultMode="Edit">
+    <HeaderStyle Font-Bold="True" CssClass="FormViewHeader" />
+    <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+</asp:FormView>
+
+<asp:FormView runat="server" Width="90%" skinID="FormViewNEG"
+    HeaderText="Negociação" DefaultMode="Insert">
+    <HeaderStyle Font-Bold="True" CssClass="FormViewHeader" />
+    <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+</asp:FormView>
+
+<asp:Panel runat="server" Width="99%" skinID="PanelFiltro">
+</asp:Panel> 
+
+<asp:TextBox runat="server" CssClass="form-control">
+</asp:TextBox> 
+
+<asp:RoundedCornersExtender runat="server" BorderColor="LightGray" Radius="10" Corners="All" skinID="RoundedCornersFiltro">
+</asp:RoundedCornersExtender>
+
+<asp:CalendarExtender runat="server" Format="dd/MM/yyyy" TodaysDateFormat="dd/MM/yyyy" Animated="true">
+</asp:CalendarExtender>
+
+<asp:FilteredTextBoxExtender runat="server" FilterType="Numbers, Custom" FilterMode="ValidChars" ValidChars="-" skinID="FilterCEP">
+</asp:FilteredTextBoxExtender>
+
+<asp:FilteredTextBoxExtender runat="server" FilterType="Numbers, Custom" FilterMode="ValidChars" ValidChars="-" skinID="FilterTelefone">
+</asp:FilteredTextBoxExtender>
+
+<asp:FilteredTextBoxExtender runat="server" FilterType="Numbers, Custom" FilterMode="ValidChars" ValidChars="," skinID="FilterDecimal">
+</asp:FilteredTextBoxExtender>
+
+<asp:ComboBox runat="server" DropDownStyle="DropDownList" AutoCompleteMode="SuggestAppend" CaseSensitive="false" ItemInsertLocation="Append">
+</asp:ComboBox>
+
+<asp:DropShadowExtender runat="server" Opacity="0.50" Rounded="true" Radius="10" TrackPosition="true" Width="5" skinID="DropShadowFiltro" />
