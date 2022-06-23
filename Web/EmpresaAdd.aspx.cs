@@ -3,6 +3,8 @@ using System.Web.UI;
 using PI4Sem.DAL;
 using PI4Sem.Model;
 using PI4Sem.Infra;
+using System.Net;
+using Newtonsoft.Json;
 
 /// <summary>
 /// Agenda Fácil by PI4Sem
@@ -15,7 +17,7 @@ namespace PI4Sem.AgendaFacil
     public partial class EmpresaAdd : Page
     {
         public UserLoggedInfo oUserLoggedInfo;
-        
+
         /// <summary>
         /// Evento executado quando inicia a página
         /// </summary>
@@ -75,5 +77,35 @@ namespace PI4Sem.AgendaFacil
             return true;
         }
 
+        protected void btnConsultar_Click(object sender, EventArgs e)
+        {
+            if (Formats.ValidaCNPJ(txtInscricao.Text))
+            {
+                try
+                {
+                    var client = new WebClient();
+                    var conteudo = client.DownloadString("https://www.receitaws.com.br/v1/cnpj/@cnpj".Replace("@cnpj", txtInscricao.Text));
+
+                    var retorno = JsonConvert.DeserializeObject<WSEmpresa>(conteudo);
+
+                    txtNome.Text = retorno.nome;
+                    txtEndereco.Text = retorno.logradouro + ", " + retorno.numero + " - " + retorno.complemento;
+                    txtBairro.Text = retorno.bairro;
+                    txtCep.Text = Formats.GetNumbers(retorno.cep);
+                    txtCidade.Text = retorno.municipio;
+                    txtUf.Text = retorno.uf;
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    AppProgram.SetAlert(this, "Muitas consultas: a versão gratuita da API permite apenas 3 consultas por minuto.");
+                    return;
+                }
+            }
+            if (!Formats.ValidaCPF(txtInscricao.Text))
+            {
+                AppProgram.SetAlert(this, "CPF/CNPJ inválido");
+            }
+        }
     }
 }

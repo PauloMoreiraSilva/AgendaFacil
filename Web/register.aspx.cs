@@ -1,7 +1,11 @@
 ﻿using System;
+using System.IO;
+using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
+using Newtonsoft.Json;
 using PI4Sem.Business;
 using PI4Sem.Infra;
 using PI4Sem.Model;
@@ -159,6 +163,32 @@ namespace PI4Sem.AgendaFacil
             }
 
             return true;
+        }
+
+        protected void btnConsultar_Click(object sender, EventArgs e)
+        {
+            if (Formats.ValidaCNPJ(txtInscricao.Text))
+            {
+                try
+                {
+                    var client = new WebClient();
+                    var conteudo = client.DownloadString("https://www.receitaws.com.br/v1/cnpj/@cnpj".Replace("@cnpj", txtInscricao.Text));
+
+                    var retorno = JsonConvert.DeserializeObject<WSEmpresa>(conteudo);
+
+                    txtRazaoSocial.Text = retorno.nome;
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    AppProgram.SetAlert(this, "Muitas consultas: a versão gratuita da API permite apenas 3 consultas por minuto.");
+                    return;
+                }
+            }
+            else
+            {
+                AppProgram.SetAlert(this, "CNPJ inválido");
+            }
         }
     }
 }

@@ -373,11 +373,11 @@
 
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2021 - UNIVESP Projeto Integrador 4o Semestre.
+            <strong>Copyright &copy; 2021 - UNIVESP Projeto Integrador 5o Semestre.
             Utilizando framework frontend: <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
             Projeto Agenda Fácil.
     <div class="float-right d-none d-sm-inline-block">
-        <b>Versão</b> 1.0.0
+        <b>Versão</b> 2.0.0
     </div>
         </footer>
 
@@ -388,6 +388,15 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
+
+    <!-- VLibras Widget -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <!-- VLibras Widget -->
 
     <!-- jQuery -->
     <script src="Content/plugins/jquery/jquery.min.js"></script>
@@ -421,6 +430,12 @@
     <script src="Content/dist/js/adminlte.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="Content/dist/js/demo.js"></script>
+    <!-- VLibras Widget -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <!-- VLibras Widget -->
     <asp:ContentPlaceHolder ID="ContentJs" runat="server">
     </asp:ContentPlaceHolder>
 </body>

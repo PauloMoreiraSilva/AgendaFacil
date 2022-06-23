@@ -49,7 +49,20 @@
                                 <div class="card-body">
                                     
                                     <p><asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="Verifique os valores inválidos:" /></p>
-                                    
+
+                                    <div class="form-group row">
+                                        <label for="txtInscricao" class="col-sm-2 col-form-label">CPF/CNPJ:</label>
+                                        <div class="col-sm-4">
+                                            <asp:TextBox ID="txtInscricao" runat="server" CssClass="form-control" Text="" MaxLength="14" placeholder="CPF/CNPJ:" />
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <asp:Button ID="btnConsultar" runat="server" Text="Consultar" CausesValidation="false" OnClick="btnConsultar_Click"/>
+                                        </div>
+                                    </div>
+                                    <div style="display:none">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Informe o CNPJ/CPF da Empresa" ControlToValidate="txtInscricao">*</asp:RequiredFieldValidator>
+                                    </div>
+
                                     <div class="form-group row">
                                         <label for="txtNome" class="col-sm-2 col-form-label">Nome:</label>
                                         <div class="col-sm-10">
@@ -58,16 +71,6 @@
                                     </div>
                                     <div style="display:none">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Informe o nome da Empresa" ControlToValidate="txtNome">*</asp:RequiredFieldValidator>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="txtInscricao" class="col-sm-2 col-form-label">CPF/CNPJ:</label>
-                                        <div class="col-sm-10">
-                                            <asp:TextBox ID="txtInscricao" runat="server" CssClass="form-control" Text="" MaxLength="200" placeholder="CPF/CNPJ:" />
-                                        </div>
-                                    </div>
-                                    <div style="display:none">
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Informe o CNPJ/CPF da Empresa" ControlToValidate="txtInscricao">*</asp:RequiredFieldValidator>
                                     </div>
 
                                     <div class="form-group row">

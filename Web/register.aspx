@@ -40,6 +40,20 @@
                         <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="Verifique os valores inválidos:" />
                         
                         <div class="input-group mb-3">
+                            <asp:TextBox ID="txtInscricao" runat="server" CssClass="form-control" MaxLength="14" placeholder="CNPJ/CPF:" />
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-money-check"></span>
+                                </div>
+                            </div>
+                            <asp:Button ID="btnConsultar" runat="server" Text="Consultar" CausesValidation="false" OnClick="btnConsultar_Click"/>
+                        </div>
+                        <div style="display:none">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Informe o CNPJ ou CPF" ControlToValidate="txtInscricao">*</asp:RequiredFieldValidator>
+                            <asp:FilteredTextBoxExtender ID="ftbe" runat="server" TargetControlID="txtInscricao" ValidChars="1234567890" />
+                        </div>
+
+                        <div class="input-group mb-3">
                             <asp:TextBox ID="txtRazaoSocial" runat="server" CssClass="form-control" Text="" MaxLength="200" placeholder="Razão Social:" />
                             <div class="input-group-append">
                                 <div class="input-group-text">
@@ -49,18 +63,6 @@
                         </div>
                         <div style="display:none">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Informe a Razão Social" ControlToValidate="txtRazaoSocial">*</asp:RequiredFieldValidator>
-                        </div>
-
-                        <div class="input-group mb-3">
-                            <asp:TextBox ID="txtInscricao" runat="server" CssClass="form-control" Text="" MaxLength="200" placeholder="CNPJ/CPF:" />
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-money-check"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="display:none">
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Informe o CNPJ ou CPF" ControlToValidate="txtInscricao">*</asp:RequiredFieldValidator>
                         </div>
 
                         <div class="input-group mb-3">

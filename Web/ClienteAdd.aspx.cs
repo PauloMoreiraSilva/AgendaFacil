@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using PI4Sem.DAL;
@@ -99,6 +103,25 @@ namespace PI4Sem.AgendaFacil
             }
 
             return true;
+        }
+
+        protected void btnConsultar_Click(object sender, EventArgs e)
+        {
+            using (var ws = new WSCorreios.AtendeClienteClient())
+            {
+                try
+                {
+                    var resultado = ws.consultaCEP(txtCep.Text);
+                    txtEndereco.Text = resultado.end;
+                    txtCidade.Text = resultado.cidade;
+                    txtBairro.Text = resultado.bairro;
+                    txtUf.Text = resultado.uf;
+                }
+                catch (Exception ex)
+                {
+                    AppProgram.SetAlert(this, "CEP em formato inválido ou não encontrado.");
+                }
+            }
         }
     }
 }

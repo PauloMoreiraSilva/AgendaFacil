@@ -16,3 +16,9 @@ D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Model\obj\Debug\Model.cspro
 D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Model\obj\Debug\PI4Sem.Model.dll
 D:\UNIVESP\6o Bimestre\PI\Projeto\PI4Sem-AgendaFacil\Model\obj\Debug\PI4Sem.Model.pdb
+D:\UNIVESP\10o Bimestre\PI\AgendaFacil\Model\bin\Debug\PI4Sem.Model.dll
+D:\UNIVESP\10o Bimestre\PI\AgendaFacil\Model\bin\Debug\PI4Sem.Model.pdb
+D:\UNIVESP\10o Bimestre\PI\AgendaFacil\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+D:\UNIVESP\10o Bimestre\PI\AgendaFacil\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\UNIVESP\10o Bimestre\PI\AgendaFacil\Model\obj\Debug\PI4Sem.Model.dll
+D:\UNIVESP\10o Bimestre\PI\AgendaFacil\Model\obj\Debug\PI4Sem.Model.pdb

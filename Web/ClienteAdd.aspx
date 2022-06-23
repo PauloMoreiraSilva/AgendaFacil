@@ -93,6 +93,17 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
+                                        <label for="txtCep" class="col-sm-2 col-form-label">CEP:</label>
+                                        <div class="col-sm-4">
+                                            <asp:TextBox ID="txtCep" runat="server" CssClass="form-control" Text="" MaxLength="8" placeholder="CEP:" />
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <asp:Button ID="btnConsultar" runat="server" Text="Consultar" CausesValidation="false" OnClick="btnConsultar_Click"/>
+                                        </div>
+                                        <hr/>
+                                        <asp:Literal ID="litResultado" runat="server"/>
+                                    </div>
+                                    <div class="form-group row">
                                         <label for="txtEndereco" class="col-sm-2 col-form-label">Endereço:</label>
                                         <div class="col-sm-10">
                                             <asp:TextBox ID="txtEndereco" runat="server" CssClass="form-control" Text="" MaxLength="255" placeholder="Endereço:" />
@@ -114,12 +125,6 @@
                                         <label for="txtUf" class="col-sm-2 col-form-label">UF:</label>
                                         <div class="col-sm-10">
                                             <asp:TextBox ID="txtUf" runat="server" CssClass="form-control" Text="" MaxLength="40" placeholder="UF:" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="txtCep" class="col-sm-2 col-form-label">CEP:</label>
-                                        <div class="col-sm-10">
-                                            <asp:TextBox ID="txtCep" runat="server" CssClass="form-control" Text="" MaxLength="8" placeholder="CEP:" />
                                         </div>
                                     </div>
                                     <div class="form-group row">
