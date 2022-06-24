@@ -1,0 +1,184 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\XUnit_CNPJ_Test\\XUnit_CNPJ_Test.csproj": {}
+  },
+  "projects": {
+    "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Cache\\Cache.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Cache\\Cache.csproj",
+        "projectName": "Cache",
+        "projectPath": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Cache\\Cache.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Config\\Config.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Config\\Config.csproj",
+        "projectName": "Config",
+        "projectPath": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Config\\Config.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Cache\\Cache.csproj": {
+                "projectPath": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Cache\\Cache.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\DataBase\\DataBase.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\DataBase\\DataBase.csproj",
+        "projectName": "DataBase",
+        "projectPath": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\DataBase\\DataBase.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Config\\Config.csproj": {
+                "projectPath": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Config\\Config.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Infra\\Infra.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Infra\\Infra.csproj",
+        "projectName": "Infra",
+        "projectPath": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Infra\\Infra.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Cache\\Cache.csproj": {
+                "projectPath": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Cache\\Cache.csproj"
+              },
+              "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Config\\Config.csproj": {
+                "projectPath": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Config\\Config.csproj"
+              },
+              "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\DataBase\\DataBase.csproj": {
+                "projectPath": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\DataBase\\DataBase.csproj"
+              },
+              "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Model\\Model.csproj": {
+                "projectPath": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Model\\Model.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Model\\Model.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Model\\Model.csproj",
+        "projectName": "Model",
+        "projectPath": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Model\\Model.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\XUnit_CNPJ_Test\\XUnit_CNPJ_Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\XUnit_CNPJ_Test\\XUnit_CNPJ_Test.csproj",
+        "projectName": "XUnit_CNPJ_Test",
+        "projectPath": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\XUnit_CNPJ_Test\\XUnit_CNPJ_Test.csproj",
+        "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
+        "outputPath": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\XUnit_CNPJ_Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Infra\\Infra.csproj": {
+                "projectPath": "D:\\UNIVESP\\10o Bimestre\\PI\\AgendaFacil\\Infra\\Infra.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.9.4, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.106\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

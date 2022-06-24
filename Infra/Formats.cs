@@ -203,7 +203,7 @@ namespace PI4Sem.Infra
         {
             string CNPJ = GetNumbers(vrCNPJ);
 
-            if (CNPJ.Length > 14)
+            if (CNPJ.Length > 14 || string.IsNullOrEmpty(CNPJ))
             {
                 return false;
             }

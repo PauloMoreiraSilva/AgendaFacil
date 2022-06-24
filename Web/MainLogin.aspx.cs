@@ -34,6 +34,8 @@ namespace PI4Sem.AgendaFacil
         /// <param name="e">event.</param>
         protected void Page_Load(object sender, EventArgs e)
         {
+            Formats.ValidaCNPJ("abcde");
+            Formats.ValidaCNPJ("");
             Page.Title = AppProgram.AppName;
             ImagePath = AppProgram.GetAppImagesPath();
 
