@@ -101,7 +101,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">
                                     <i class="fas fa-chart-pie mr-1"></i>
-                                    Escova-pintura x manicure
+                                    Manicure vs Escova
                                 </h3>
                                 <div class="card-tools">
                                     <ul class="nav nav-pills ml-auto">
@@ -331,10 +331,10 @@
   // $('#revenue-chart').get(0).getContext('2d');
 
   var salesChartData = {
-      labels: ['Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro'],
+      labels: [<%= sUltimosMeses %>],
     datasets: [
       {
-        label: 'escova e pintura',
+        label: 'Manicure',
         backgroundColor: 'rgba(60,141,188,0.9)',
         borderColor: 'rgba(60,141,188,0.8)',
         pointRadius: false,
@@ -342,10 +342,10 @@
         pointStrokeColor: 'rgba(60,141,188,1)',
         pointHighlightFill: '#fff',
         pointHighlightStroke: 'rgba(60,141,188,1)',
-        data: [78, 48, 40, 19, 86, 27, 90]
+        data: [<%= sDados1 %>]
       },
       {
-        label: 'manicure',
+        label: 'Escova',
         backgroundColor: 'rgba(210, 214, 222, 1)',
         borderColor: 'rgba(210, 214, 222, 1)',
         pointRadius: false,
@@ -353,7 +353,7 @@
         pointStrokeColor: '#c1c7d1',
         pointHighlightFill: '#fff',
         pointHighlightStroke: 'rgba(220,220,220,1)',
-        data: [65, 59, 80, 81, 56, 55, 40]
+        data: [<%= sDados2 %>]
       }
     ]
   }
@@ -390,14 +390,13 @@
   var pieChartCanvas = $('#sales-chart-canvas').get(0).getContext('2d')
   var pieData = {
     labels: [
-      'manicure',
-      'penteado',
-      'escova e pintura'
+      'Manicure',
+      'Escova'
     ],
     datasets: [
       {
-        data: [30, 12, 20],
-        backgroundColor: ['#f56954', '#00a65a', '#f39c12']
+        data: [30, 12],
+        backgroundColor: ['#f56954', '#00a65a']
       }
     ]
   }

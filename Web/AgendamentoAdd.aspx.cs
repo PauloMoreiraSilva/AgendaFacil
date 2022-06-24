@@ -5,6 +5,7 @@ using PI4Sem.Model;
 using PI4Sem.Infra;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
+using System.Globalization;
 
 /// <summary>
 /// Agenda Fácil by PI4Sem
@@ -111,13 +112,13 @@ namespace PI4Sem.AgendaFacil
             if (ValidarEntrada())
             {
                 DateTime dtInicio;
-                if (!DateTime.TryParse(txtDataInicio.Text, out dtInicio))
+                if (!DateTime.TryParse(txtDataInicio.Text, new CultureInfo("pt-BR"), DateTimeStyles.None, out dtInicio))
                 {
                     AppProgram.SetAlert(this, "Data e hora de início em formato inválido. Deve ser dd/mm/yyyy hh:mm.");
                 }
 
                 DateTime dtFim;
-                if (!DateTime.TryParse(txtDataFim.Text, out dtFim))
+                if (!DateTime.TryParse(txtDataFim.Text, new CultureInfo("pt-BR"), DateTimeStyles.None, out dtFim))
                 {
                     AppProgram.SetAlert(this, "Data e hora prevista para o final está em formato inválido. Deve ser dd/mm/yyyy hh:mm.");
                 }
@@ -155,14 +156,14 @@ namespace PI4Sem.AgendaFacil
         private bool ValidarPreenchimento()
         {
             DateTime dtInicio;
-            if (!DateTime.TryParse(txtDataInicio.Text, out dtInicio))
+            if (!DateTime.TryParse(txtDataInicio.Text, new CultureInfo("pt-BR"), DateTimeStyles.None, out dtInicio))
             {
                 AppProgram.SetAlert(this, "Data e hora de início em formato inválido. Deve ser dd/mm/yyyy hh:mm.");
                 return false;
             }
 
             DateTime dtFim;
-            if (!DateTime.TryParse(txtDataInicio.Text, out dtFim))
+            if (!DateTime.TryParse(txtDataInicio.Text, new CultureInfo("pt-BR"), DateTimeStyles.None, out dtFim))
             {
                 AppProgram.SetAlert(this, "Data e hora prevista para o final está em formato inválido. Deve ser dd/mm/yyyy hh:mm.");
                 return false;

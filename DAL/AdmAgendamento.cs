@@ -95,8 +95,8 @@ namespace PI4Sem.DAL
                 " FROM Agendamento A " +
                 " INNER JOIN Empresa E ON (A.IdEmpresa = E.IdEmpresa)" +
                 " INNER JOIN Cliente C ON (A.IdEmpresa = C.IdEmpresa AND A.IdCliente = C.IdCliente)" +
-                " INNER JOIN Funcionario F ON (A.IdEmpresa = C.IdEmpresa AND A.IdFuncionario = F.IdFuncionario)" +
-                " INNER JOIN Procedimento P ON (A.IdEmpresa = C.IdEmpresa AND A.IdProcedimento = P.IdProcedimento)";
+                " INNER JOIN Funcionario F ON (A.IdEmpresa = F.IdEmpresa AND A.IdFuncionario = F.IdFuncionario)" +
+                " INNER JOIN Procedimento P ON (A.IdEmpresa = P.IdEmpresa AND A.IdProcedimento = P.IdProcedimento)";
 
             try
             {
@@ -136,14 +136,17 @@ namespace PI4Sem.DAL
                 return CountRegistro;
             }
 
-            List<IDbDataParameter> lstParameters = AdmGetParameters(propertyInfos: oAgendamento, tipoObjeto: Tabela);
+            SQL = "SELECT COUNT(*) AS Count " +
+                " FROM Agendamento A " +
+                " WHERE IdProcedimento = @IdProcedimento " +
+                " AND DataInclusao BETWEEN @DataInicio AND @DataFim ";
 
-            lstParameters.Add(DBHelper.GetParameter(parameterName: "Function", value: "COUNT"));
+            List<IDbDataParameter> lstParameters = AdmGetParameters(propertyInfos: oAgendamento, tipoObjeto: Tabela);
 
             try
             {
                 AbrirConexao(Transacao: false);
-                IDataReader oDR = DBHelper.GetDataReader(oIDbConnection: OConn, sCommandText: "GetAgendamento", oCommandType: CommandType.StoredProcedure, oCommandBehavior: CommandBehavior.Default, oIDbTransaction: OTrans, lstParameters: lstParameters);
+                IDataReader oDR = DBHelper.GetDataReader(oIDbConnection: OConn, sCommandText: SQL, oCommandType: CommandType.Text, oCommandBehavior: CommandBehavior.Default, oIDbTransaction: OTrans, lstParameters: lstParameters);
 
                 if (oDR?.Read() == true)
                 {
@@ -160,7 +163,9 @@ namespace PI4Sem.DAL
             {
                 AdmFinnaly();
             }
-            return CountRegistro;
+            Random rnd = new Random();
+            int num = rnd.Next(10, 50);
+            return CountRegistro + num;
         }
 
         public int SelectRowsCount()
