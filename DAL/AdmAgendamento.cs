@@ -163,9 +163,9 @@ namespace PI4Sem.DAL
             {
                 AdmFinnaly();
             }
-            Random rnd = new Random();
-            int num = rnd.Next(10, 50);
-            return CountRegistro + num;
+            //Random rnd = new Random();
+            //int num = rnd.Next(10, 50);
+            return CountRegistro;// + num;
         }
 
         public int SelectRowsCount()
